@@ -1,0 +1,139 @@
+<div class="item1">
+    <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
+        <img class="navar" src="../../assets/logo.jpg" alt="">
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+           
+   <button type="button" class="btn btn-light"><a class="nav-link" href="acceso">Nuestra galería</a></button>
+   <button type="button" class="btn btn-light"><a class="nav-link" href="mascotas">Búsqueda mascotas</a></button>
+   <button type="button" class="btn btn-light"><a class="nav-link" href="nosotros">Nosotros</a></button> 
+   <form class="form-inline mt-2 mt-md-0">
+    
+    <button style="position: absolute; right: 0;" (click)="cerrarSesion();" class="btn btn-outline-success my-2 my-sm-0" type="submit">Cerrar sesión</button>
+    
+  </form>
+        </div>
+    </nav>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h3>Usuarios registrados</h3>
+        </div>
+        <div class="card-body">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <td style="text-align:center" scope="col">ID</td>
+                        <th style="text-align:center" scope="col">Nombre</th>
+                        <th style="text-align:center" scope="col">Apellido</th>
+                        <th style="text-align:center" scope="col">Fecha</th>
+                        <th style="text-align:center" scope="col">Correo</th>
+                        <th style="text-align:center" scope="col">Password</th>
+                        <th style="text-align:center" scope="col">Genero</th>
+                        <th style="text-align:center" scope="col">Region</th>
+                        <th style="text-align:center" scope="col">Comuna</th>
+                    </tr>
+                </thead>
+
+                <tbody>      
+                    <tr *ngFor="let usuarios of miUsuario">
+                         <td style="text-align:center">{{usuarios.id}}</td>
+                          <td style="text-align:center">{{usuarios.nombre}}</td>
+                          <td style="text-align:center">{{usuarios.apellido}}</td>
+                          <td style="text-align:center">{{usuarios.fecha}}</td>
+                          <td style="text-align:center">{{usuarios.correo}}</td>
+                          <td style="text-align:center">{{usuarios.password}}</td>
+                          <td style="text-align:center">{{usuarios.genero}}</td>
+                          <td style="text-align:center">{{usuarios.region}}</td>
+                          <td style="text-align:center">{{usuarios.comuna}}</td>
+                          <td style="text-align:center"><button class="btn btn-primary" (click)= "eliminar(usuarios.correo);">Eliminar</button> </td>
+                        
+                    </tr>
+                  </tbody>
+                </table>
+    </div>
+</div>
+</div>
+<hr/>
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h3>Mascotas registrados</h3>
+        </div>
+        <div class="card-body">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <td style="text-align:center" scope="col">ID</td>
+                        <th style="text-align:center" scope="col">Nombre</th>
+                        <th style="text-align:center" scope="col">Estatura</th>
+                        <th style="text-align:center" scope="col">Edad</th>
+                        <th style="text-align:center" scope="col">Sexo</th>
+                        <th style="text-align:center" scope="col">Región</th>
+                        <th style="text-align:center" scope="col">Comuna</th>
+                        <th style="text-align:center" scope="col">Imagen</th>
+                        <th style="text-align:center" scope="col">Descripcion</th>
+                    </tr>
+                </thead>
+
+                <tbody>      
+                    <tr *ngFor="let mascotas of miMascota">
+                         <td style="text-align:center">{{mascotas.id}}</td>
+                          <td style="text-align:center">{{mascotas.nombre}}</td>
+                          <td style="text-align:center">{{mascotas.estatura}}</td>
+                          <td style="text-align:center">{{mascotas.edad}}</td>
+                          <td style="text-align:center">{{mascotas.sexo}}</td>
+                          <td style="text-align:center">{{mascotas.region}}</td>
+                          <td style="text-align:center">{{mascotas.comuna}}</td>
+                          <td style="text-align:center">{{mascotas.imagen}}</td>
+                          <td style="text-align:center">{{mascotas.descripcion}}</td>
+                          <td style="text-align:center"><button class="btn btn-primary" (click)= "eliminarMascota(mascotas.id);">Eliminar</button> </td>
+                        
+                    </tr>
+                  </tbody>
+                </table>
+    </div>
+</div>
+</div>
+<hr/>
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h3>Adopciones en sistema</h3>
+        </div>
+        <div class="card-body">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <td style="text-align:center" scope="col">ID</td>
+                        <th style="text-align:center" scope="col">ID_Mascota</th>
+                        <th style="text-align:center" scope="col">ID_Usuario</th>
+                        <th style="text-align:center" scope="col">Estado</th>
+                    </tr>
+                </thead>
+
+                <tbody>      
+                    <tr *ngFor="let adopcion of miAdopcion">
+                         <td style="text-align:center">{{adopcion.id}}</td>
+                          <td style="text-align:center">{{adopcion.id_Mascota}}</td>
+                          <td style="text-align:center">{{adopcion.id_Usuario}}</td>
+                          <td style="text-align:center">{{adopcion.estado}}</td>
+                          <td style="text-align:center"><button class="btn btn-primary" (click)= "eliminarAdopcion(adopcion.id);">Eliminar</button> </td>
+                        
+                    </tr>
+                  </tbody>
+                </table>
+    </div>
+</div>
+</div>

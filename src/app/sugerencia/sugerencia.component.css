@@ -1,0 +1,28 @@
+.header {
+    color: #36A0FF;
+    font-size: 27px;
+    padding: 10px;
+}
+
+.bigicon {
+    font-size: 35px;
+    color: #36A0FF;
+}
+
+body {
+    font-size: 180%;
+  }
+  .navar{
+    width: 80px; height: 50px;
+  }
+  .btn{
+    border-radius: 1.5rem;
+    
+  }
+  
+  .nav-link{
+      
+    color: black;
+    
+  
+   }

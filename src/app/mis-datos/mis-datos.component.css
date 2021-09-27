@@ -1,0 +1,20 @@
+
+body {
+  font-size: 180%;
+  padding-top:40px;
+  padding-left: 500px;
+}
+.navar{
+  width: 80px; height: 50px;
+}
+.btn{
+  border-radius: 1.5rem;
+  
+}
+
+.nav-link{
+    
+  color: black;
+  
+
+ }
